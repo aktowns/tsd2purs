@@ -1,0 +1,11 @@
+GEM
+  specs:
+    blankslate (2.1.2.4)
+    parslet (1.6.1)
+      blankslate (~> 2.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  parslet

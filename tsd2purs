@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require_relative 'lib/parser'
+require_relative 'lib/nodes'
+require_relative 'lib/transformer'
+
+input = ARGV[0]
+throw "please supply a file" if input.nil? || !File.exist?(input)
+
+contents = IO.read(input).strip
+parser = TSDParser.new
+transformer = TSDTransformer.new
+
+require 'pp'
+tree = parser.parse(contents)
+pp transformer.apply(tree)
+puts transformer.apply(tree).map(&:value)
